@@ -6,8 +6,9 @@
       "-Wextra",
       "-Wpedantic",
       "-Werror",
-      "-c",
       "-Iinclude",
+      "-g",
+      "-c",
       "-o",
       "obj/main.o",
       "src/main.c"
@@ -23,8 +24,9 @@
       "-Wextra",
       "-Wpedantic",
       "-Werror",
-      "-c",
       "-Iinclude",
+      "-g",
+      "-c",
       "-o",
       "obj/tcp.o",
       "src/tcp.c"
