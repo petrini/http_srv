@@ -1,0 +1,36 @@
+[
+  {
+    "arguments": [
+      "/usr/lib64/ccache/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-Werror",
+      "-c",
+      "-Iinclude",
+      "-o",
+      "obj/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/achu/Documents/Projects/zero-to-hero-c-programming/http_srv",
+    "file": "/home/achu/Documents/Projects/zero-to-hero-c-programming/http_srv/src/main.c",
+    "output": "/home/achu/Documents/Projects/zero-to-hero-c-programming/http_srv/obj/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-Werror",
+      "-c",
+      "-Iinclude",
+      "-o",
+      "obj/tcp.o",
+      "src/tcp.c"
+    ],
+    "directory": "/home/achu/Documents/Projects/zero-to-hero-c-programming/http_srv",
+    "file": "/home/achu/Documents/Projects/zero-to-hero-c-programming/http_srv/src/tcp.c",
+    "output": "/home/achu/Documents/Projects/zero-to-hero-c-programming/http_srv/obj/tcp.o"
+  }
+]
