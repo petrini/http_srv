@@ -1,21 +1,30 @@
-TARGET = bin/http_srv
+CC = gcc
+CFLAGS = -Wall -Wextra -Wpedantic -Werror -Iinclude -g
 
-SRC = $(wildcard src/*.c)
-OBJ = $(SRC:src/%.c=obj/%.o)
+SRC_DIR = src
+OBJ_DIR = obj
+INCLUDE_DIR = include
+BIN_DIR = bin
 
-run: clean default
-	./$(TARGET)
+TARGET = $(BIN_DIR)/http_srv
 
-default: $(TARGET)
+SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
+OBJ_FILES = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ_FILES) | $(BIN_DIR)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
 
 clean:
-	rm -f obj/*.o
-	rm -f bin/*
-	rm -f *.db
-
-$(TARGET): $(OBJ)
-	gcc -o $@ $?
-
-$(OBJ): obj/%.o: src/%.c
-	gcc -Wall -Wextra -Wpedantic -Werror -c $< -o $@ -Iinclude
+	rm -rf $(OBJ_DIR) $(BIN_DIR)
 
