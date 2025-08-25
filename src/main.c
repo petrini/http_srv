@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "common.h"
-#include "main.h"
 #include "tcp.h"
+
+#define STATUS_SUCCESS 1
+#define STATUS_ERROR 0
 
 int main()
 {

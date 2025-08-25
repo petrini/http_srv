@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 #include "tcp.h"
-#include "common.h"
-#include "main.h"
+
+#define STATUS_SUCCESS 1
+#define STATUS_ERROR 0
 
 server_status_e bind_tcp_port(tcp_server *server, int port)
 {
