@@ -6,8 +6,14 @@
 #define STATUS_SUCCESS 1
 #define STATUS_ERROR 0
 
-int main()
+int main(int argc, char *argv[])
 {
+    if(argc != 1)
+    {
+        printf("Usage: %s\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
     tcp_server server = {0};
     server_status_e status = bind_tcp_port(&server, 8080);
     if(status != SERVER_OK)
