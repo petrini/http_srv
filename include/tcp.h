@@ -2,7 +2,6 @@
 #define TCP_H
 
 #include <arpa/inet.h>
-#include <string.h>
 #include <unistd.h>
 
 #define SOCKET_PROTOCOL 0
